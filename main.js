@@ -76,8 +76,8 @@ function refreshTodos() {
         const id = parseInt(e.target.getAttribute('data-id'))
 
         deleteTodo(id, refreshTodos)
-        alert(e.target.getAttribute('data-id'));
       })
+
       editBtn.addEventListener('click', function(e) {
         const idEdit = parseInt(e.target.getAttribute('edit-id'))
 
@@ -87,16 +87,17 @@ function refreshTodos() {
 
         li.replaceChild(editField, span);
         li.replaceChild(saveBtn, editBtn);
-        todoList.appendChild(li);
 
         saveBtn.addEventListener('click', function(e) {
           const editText = editField.value;
-          alert(editText);
           if (editText.replace(/ /g, '') !== '') {
             // Create the todo item.
             createTodo(editText, function(todo) {
-              refreshTodos()
+              deleteTodo(idEdit, refreshTodos)
           })
+        }
+        else {
+          deleteTodo(idEdit, refreshTodos);
         }
       })
       })
