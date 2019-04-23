@@ -57,15 +57,15 @@ header {
   margin: 0.5em 0;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   margin-right: 10px;
 }
 
 .editBtn {
   float: right;
-  color : blue;
+  color: blue;
 }
 .saveBtn {
   float: right;
-  color : blue;
+  color: blue;
 }
